@@ -29,6 +29,7 @@ public class Calculator implements ActionListener {
 	JButton multiplyButton;
 	JButton subtractButton;
 	JButton additonButton;
+	JButton clearButton;
 
 	public Calculator() {
 
@@ -52,6 +53,13 @@ public class Calculator implements ActionListener {
 		jf.add(displayLabel);
 
 		// Buttons
+		
+		//Clear
+		clearButton = new JButton("Clear");
+		clearButton.setBounds(30, 90, 150, 30);
+		clearButton.setFont(new Font("Montserrat", Font.PLAIN, 14));
+		clearButton.addActionListener(this);
+		jf.add(clearButton);
 
 		// Row 1
 		sevenButton = new JButton("7");
@@ -185,7 +193,7 @@ public class Calculator implements ActionListener {
 		} else if (e.getSource() == zeroButton) {
 			displayLabel.setText(displayLabel.getText()+"0");
 		} else if (e.getSource() == dotButton) {
-
+			displayLabel.setText(displayLabel.getText()+".");
 		} else if (e.getSource() == equalButton) {
 
 		} else if (e.getSource() == divisionButton) {
@@ -196,6 +204,8 @@ public class Calculator implements ActionListener {
 
 		} else if (e.getSource() == additonButton) {
 
+		}else if (e.getSource() == clearButton) {
+			displayLabel.setText("");
 		}
 	}
 
